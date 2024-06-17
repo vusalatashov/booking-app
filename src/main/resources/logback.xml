@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Console Appender with Colorized Output -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%highlight(%d{HH:mm:ss.SSS} [%-5level] - %msg%n){INFO=blue, WARN=yellow, ERROR=red}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- File Appender -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <!-- Specify the path where the log file should be written -->
+        <file>src/main/java/az/edu/turing/resource/BookingAppLog.log</file>
+        <append>true</append>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{HH:mm:ss.SSS} [%-5level] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Root Logger Configuration -->
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+</configuration>
