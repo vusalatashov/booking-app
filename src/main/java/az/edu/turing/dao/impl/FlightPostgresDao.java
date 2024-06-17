@@ -111,7 +111,7 @@ public class FlightPostgresDao implements FlightDao {
                 LoggerService.logger.error("Transaction rollback failed", ex);
             }
         }
-        return null;
+        return flightEntities;
     }
 
     @Override
