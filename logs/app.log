@@ -1,0 +1,8 @@
+17:46:21.021 [INFO ] - This is an info message
+17:46:35.182 [INFO ] - This is an info message
+17:47:18.011 [INFO ] - This is an info message
+17:47:18.013 [WARN ] - This is a warning message
+17:47:18.013 [ERROR] - This is an error message
+17:47:44.957 [ INFO ] - This is an info message
+17:47:44.959 [ WARN ] - This is a warning message
+17:47:44.959 [ ERROR] - This is an error message
