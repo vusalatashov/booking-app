@@ -1,7 +1,12 @@
 package az.edu.turing;
 
+import az.edu.turing.log.Log;
+import az.edu.turing.service.LoggerService;
+
 public class Application {
     public static void main(String[] args) {
-System.out.println("Hello, Turing!");
+        LoggerService.logger.info("This is an info message");
+        LoggerService.logger.warn("This is a warning message");
+        LoggerService.logger.error("This is an error message");
     }
 }
