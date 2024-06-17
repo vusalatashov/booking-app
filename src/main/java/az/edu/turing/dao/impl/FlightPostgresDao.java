@@ -13,27 +13,28 @@ import java.util.List;
 public class FlightPostgresDao implements FlightDao {
     public static final String ADD_FLIGHT_SQL = "insert into flight(origin,destination,departure_time,free_seats)\n" +
             "values (?,?,?,?);";
-    public static final String findFlightById="select *from flight where id=?;";
-    public static final String findAllFlightSQL="select *from flight;";
+    public static final String findFlightById = "select *from flight where id=?;";
+    public static final String findAllFlightSQL = "select *from flight;";
 
 
     @Override
     public void save(FlightEntity entity) {
         Connection conn = null;
-        try{ conn = DriverManager.getConnection(
-                "jdbc:postgresql://localhost:5433/postgres",
-                "postgres",
-                "postgres");
-             PreparedStatement query = conn.prepareStatement(ADD_FLIGHT_SQL);
+        try {
+            conn = DriverManager.getConnection(
+                    "jdbc:postgresql://localhost:5433/postgres",
+                    "postgres",
+                    "postgres");
+            PreparedStatement query = conn.prepareStatement(ADD_FLIGHT_SQL);
 
             conn.setAutoCommit(false);
-          query.setString(1,entity.getOrigin().name());
-          query.setString(2,entity.getDestination().name());
-          query.setTimestamp(3, Timestamp.valueOf(entity.getDepartureTime()));
-          query.setInt(4,entity.getNumOfSeats());
-          query.executeUpdate();
-          conn.commit();
-        }catch(SQLException e){
+            query.setString(1, entity.getOrigin().name());
+            query.setString(2, entity.getDestination().name());
+            query.setTimestamp(3, Timestamp.valueOf(entity.getDepartureTime()));
+            query.setInt(4, entity.getNumOfSeats());
+            query.executeUpdate();
+            conn.commit();
+        } catch (SQLException e) {
             LoggerService.logger.error(e.getMessage());
             try {
                 conn.rollback();
@@ -83,18 +84,18 @@ public class FlightPostgresDao implements FlightDao {
 
     @Override
     public List<FlightEntity> findAll() {
-        List<FlightEntity> flightEntities =new ArrayList<>();
+        List<FlightEntity> flightEntities = new ArrayList<>();
         Connection conn = null;
-        try{
-            conn=DriverManager.getConnection(
+        try {
+            conn = DriverManager.getConnection(
                     "jdbc:postgresql://localhost:5433/postgres",
                     "postgres",
                     "postgres");
 
-            PreparedStatement query=conn.prepareStatement(findAllFlightSQL);
+            PreparedStatement query = conn.prepareStatement(findAllFlightSQL);
             conn.setAutoCommit(false);
-            ResultSet resultSet=query.executeQuery();
-            while(resultSet.next()){
+            ResultSet resultSet = query.executeQuery();
+            while (resultSet.next()) {
                 long flightId = resultSet.getLong("id");
                 String origin = resultSet.getString("origin");
                 String destination = resultSet.getString("destination");
@@ -103,7 +104,7 @@ public class FlightPostgresDao implements FlightDao {
                 flightEntities.add(new FlightEntity(flightId, Cities.valueOf(origin), Cities.valueOf(destination), departureTime, numOfSeats));
             }
 
-        }catch(SQLException e){
+        } catch (SQLException e) {
             LoggerService.logger.error(e.getMessage());
             try {
                 conn.rollback();
