@@ -82,6 +82,6 @@ public class FlightEntity {
 
     @Override
     public String toString() {
-        return String.format("FlightEntity{id=%d, origin=%s, destination=%s, departureTime=%s, numOfSeats=%d}", id, origin, destination, departureTime, numOfSeats);
+        return String.format("{id=%d, origin=%s, destination=%s, departureTime=%s, numOfSeats=%d}", id, origin, destination, departureTime, numOfSeats);
     }
 }
