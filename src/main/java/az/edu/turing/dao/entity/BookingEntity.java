@@ -42,7 +42,7 @@ public class BookingEntity {
     }
 
     public List<String> getPassengerNames(){
-        return passengerNames;;
+        return passengerNames;
     }
 
     public void setPassengerNames(List<String> passengerNames){

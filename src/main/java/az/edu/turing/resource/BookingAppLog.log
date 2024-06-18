@@ -37,3 +37,29 @@
 02:04:27.222 [INFO ] - This is an info message
 02:04:27.230 [WARN ] - This is a warning message
 02:04:27.230 [ERROR] - This is an error message
+16:18:18.580 [INFO ] - This is an info message
+16:18:18.589 [WARN ] - This is a warning message
+16:18:18.589 [ERROR] - This is an error message
+16:18:20.217 [ERROR] - ResultSet not positioned properly, perhaps you need to call next.
+16:20:15.365 [INFO ] - This is an info message
+16:20:15.373 [WARN ] - This is a warning message
+16:20:15.374 [ERROR] - This is an error message
+16:23:39.549 [INFO ] - This is an info message
+16:23:39.561 [WARN ] - This is a warning message
+16:23:39.562 [ERROR] - This is an error message
+16:28:57.026 [INFO ] - This is an info message
+16:28:57.038 [WARN ] - This is a warning message
+16:28:57.038 [ERROR] - This is an error message
+16:29:04.880 [INFO ] - This is an info message
+16:29:04.887 [WARN ] - This is a warning message
+16:29:04.888 [ERROR] - This is an error message
+16:33:04.483 [INFO ] - This is an info message
+16:33:04.494 [WARN ] - This is a warning message
+16:33:04.495 [ERROR] - This is an error message
+16:38:16.990 [INFO ] - This is an info message
+16:38:16.997 [WARN ] - This is a warning message
+16:38:16.998 [ERROR] - This is an error message
+16:38:18.963 [ERROR] - No value specified for parameter 1.
+16:40:49.826 [INFO ] - This is an info message
+16:40:49.841 [WARN ] - This is a warning message
+16:40:49.842 [ERROR] - This is an error message

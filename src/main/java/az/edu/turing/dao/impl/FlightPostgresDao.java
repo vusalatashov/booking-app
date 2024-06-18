@@ -11,10 +11,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FlightPostgresDao implements FlightDao {
-    public static final String ADD_FLIGHT_SQL = "insert into flight(origin,destination,departure_time,free_seats)\n" +
+    private static final String ADD_FLIGHT_SQL = "insert into flight(origin,destination,departure_time,free_seats)\n" +
             "values (?,?,?,?);";
-    public static final String findFlightById = "select *from flight where id=?;";
-    public static final String findAllFlightSQL = "select *from flight;";
+    private static final String findFlightById = "select *from flight where id=?;";
+    private static final String findAllFlightSQL = "select *from flight;";
+    private static final String cancelFlightSQL="delete from flight where id=?;";
+    private static final String findFlightByOrigin="select *from flight where origin=?;";
 
 
     @Override
@@ -47,7 +49,6 @@ public class FlightPostgresDao implements FlightDao {
 
     @Override
     public FlightEntity findById(long id) {
-        FlightEntity flightEntity = null;
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(
@@ -56,8 +57,6 @@ public class FlightPostgresDao implements FlightDao {
                     "postgres"
             );
             PreparedStatement query = conn.prepareStatement(findFlightById);
-            conn.setAutoCommit(false);
-
             query.setLong(1, id);
             ResultSet resultSet = query.executeQuery();
             while (resultSet.next()) {
@@ -66,20 +65,12 @@ public class FlightPostgresDao implements FlightDao {
                 String destination = resultSet.getString("destination");
                 LocalDateTime departureTime = resultSet.getTimestamp("departure_time").toLocalDateTime();
                 int numOfSeats = resultSet.getInt("free_seats");
-                flightEntity = new FlightEntity(flightId, Cities.valueOf(origin), Cities.valueOf(destination), departureTime, numOfSeats);
+                return new FlightEntity(flightId, Cities.valueOf(origin), Cities.valueOf(destination), departureTime, numOfSeats);
             }
-            conn.commit();
         } catch (SQLException e) {
             LoggerService.logger.error(e.getMessage());
-            if (conn != null) {
-                try {
-                    conn.rollback();
-                } catch (SQLException ex) {
-                    LoggerService.logger.error("Transaction rollback failed", ex);
-                }
-            }
         }
-        return flightEntity;
+        return null;
     }
 
     @Override
@@ -93,7 +84,6 @@ public class FlightPostgresDao implements FlightDao {
                     "postgres");
 
             PreparedStatement query = conn.prepareStatement(findAllFlightSQL);
-            conn.setAutoCommit(false);
             ResultSet resultSet = query.executeQuery();
             while (resultSet.next()) {
                 long flightId = resultSet.getLong("id");
@@ -106,27 +96,62 @@ public class FlightPostgresDao implements FlightDao {
 
         } catch (SQLException e) {
             LoggerService.logger.error(e.getMessage());
-            try {
-                conn.rollback();
-            } catch (SQLException ex) {
-                LoggerService.logger.error("Transaction rollback failed", ex);
-            }
         }
         return flightEntities;
     }
 
     @Override
     public void cancelFlight(long flightId) {
+            Connection conn = null;
+            try{
+                conn=DriverManager.getConnection(
+                        "jdbc:postgresql://localhost:5433/postgres",
+                        "postgres",
+                        "postgres");
+                PreparedStatement query=conn.prepareStatement(cancelFlightSQL);
+                conn.setAutoCommit(false);
+                query.setLong(1,flightId);
+                query.executeUpdate();
+                conn.commit();
+            }catch(SQLException e){
+                LoggerService.logger.error(e.getMessage());
+                try {
+                    conn.rollback();
+                } catch (Exception ex) {
+                    LoggerService.logger.error("Transaction rollback failed");
+                }
 
+            }
     }
 
     @Override
     public List<FlightEntity> findByOrigin(String origin) {
-        return null;
+        List<FlightEntity> flightEntities = new ArrayList<>();
+        Connection conn;
+        try {
+            conn = DriverManager.getConnection(
+                    "jdbc:postgresql://localhost:5433/postgres",
+                    "postgres",
+                    "postgres");
+
+            PreparedStatement query = conn.prepareStatement(findFlightByOrigin);
+            query.setString(1,origin);
+            ResultSet resultSet = query.executeQuery();
+            while (resultSet.next()) {
+                long flightId = resultSet.getLong("id");
+                String originCity= resultSet.getString("origin");
+                String destination = resultSet.getString("destination");
+                LocalDateTime departureTime = resultSet.getTimestamp("departure_time").toLocalDateTime();
+                int numOfSeats = resultSet.getInt("free_seats");
+                flightEntities.add(new FlightEntity(flightId, Cities.valueOf(originCity), Cities.valueOf(destination), departureTime, numOfSeats));
+            }
+
+        } catch (SQLException e) {
+            LoggerService.logger.error(e.getMessage());
+        }
+        return flightEntities;
+
+
     }
 
-    @Override
-    public void update(FlightEntity entity) {
-
-    }
 }

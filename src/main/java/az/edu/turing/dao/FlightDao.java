@@ -15,5 +15,5 @@ public interface FlightDao {
 
     List<FlightEntity> findByOrigin(String origin);
 
-    void update(FlightEntity entity);
+
 }
