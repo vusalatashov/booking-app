@@ -17,9 +17,14 @@ public class Application {
         LoggerService.logger.error("This is an error message");
 
         FlightDao flightDao=new FlightPostgresDao();
-        flightDao.save(new FlightEntity(Cities.MADRID,Cities.AMSTERDAM, LocalDateTime.now(),100));
+        flightDao.cancelFlight(3);
+        System.out.println(flightDao.findAll());
+        System.out.println(flightDao.findByOrigin("MADRID"));
 
-        FlightEntity flight = flightDao.findById(1L);
+
+       /*  flightDao.save(new FlightEntity(Cities.MADRID,Cities.AMSTERDAM, LocalDateTime.now(),100));
+
+       FlightEntity flight = flightDao.findById(1L);
         if (flight != null) {
             LoggerService.logger.info("Flight found: " + flight.toString());
         } else {
@@ -31,5 +36,25 @@ public class Application {
         for(FlightEntity f:flights){
             LoggerService.logger.info(f.toString());
         }
+
+        flightDao.cancelFlight(flight.getId());
+        LoggerService.logger.info("Flight with ID " + flight.getId() + " has been cancelled");
+
+        FlightEntity cancelledFlight=flightDao.findById(flight.getId());
+        if(cancelledFlight==null){
+            LoggerService.logger.info("Flight with ID " + flight.getId() + " has been cancelled");
+        }
+        else{
+            LoggerService.logger.warn("Flight with ID " + cancelledFlight.getId() + "still exist in database");
+        }
+
+        String originCity = "MADRID";
+        List<FlightEntity> flightsFromOrigin = flightDao.findByOrigin(originCity);
+        LoggerService.logger.info("Showing all flights from " + originCity + ":");
+        for (FlightEntity f : flightsFromOrigin) {
+            LoggerService.logger.info(f.toString());
+        }
+
+        */
     }
 }
