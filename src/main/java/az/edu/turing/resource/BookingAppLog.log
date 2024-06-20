@@ -63,3 +63,239 @@
 16:40:49.826 [INFO ] - This is an info message
 16:40:49.841 [WARN ] - This is a warning message
 16:40:49.842 [ERROR] - This is an error message
+02:46:02.483 [INFO ] - This is an info message
+02:46:02.491 [WARN ] - This is a warning message
+02:46:02.491 [ERROR] - This is an error message
+02:46:26.515 [INFO ] - This is an info message
+02:46:26.520 [WARN ] - This is a warning message
+02:46:26.521 [ERROR] - This is an error message
+14:50:51.881 [INFO ] - This is an info message
+14:50:51.883 [WARN ] - This is a warning message
+14:50:51.884 [ERROR] - This is an error message
+14:50:52.199 [ERROR] - FATAL: password authentication failed for user "postgres"
+14:51:59.264 [INFO ] - This is an info message
+14:51:59.266 [WARN ] - This is a warning message
+14:51:59.266 [ERROR] - This is an error message
+14:51:59.524 [ERROR] - FATAL: password authentication failed for user "postgres"
+14:52:28.802 [INFO ] - This is an info message
+14:52:28.804 [WARN ] - This is a warning message
+14:52:28.804 [ERROR] - This is an error message
+14:52:29.036 [ERROR] - FATAL: password authentication failed for user "postgres"vhghg
+14:53:28.353 [INFO ] - This is an info message
+14:53:28.355 [WARN ] - This is a warning message
+14:53:28.356 [ERROR] - This is an error message
+14:53:28.584 [ERROR] - FATAL: password authentication failed for user "postgres"
+14:53:41.273 [INFO ] - This is an info message
+14:53:41.275 [WARN ] - This is a warning message
+14:53:41.275 [ERROR] - This is an error message
+14:53:41.492 [ERROR] - FATAL: password authentication failed for user "postgrs"
+14:53:57.842 [INFO ] - This is an info message
+14:53:57.845 [WARN ] - This is a warning message
+14:53:57.845 [ERROR] - This is an error message
+14:53:58.151 [ERROR] - ERROR: column "flightid" of relation "booking" does not exist
+  Position: 21
+14:55:02.647 [INFO ] - This is an info message
+14:55:02.649 [WARN ] - This is a warning message
+14:55:02.649 [ERROR] - This is an error message
+14:55:03.012 [ERROR] - ERROR: insert or update on table "booking" violates foreign key constraint "booking_flight_id_fkey"
+  Detail: Key (flight_id)=(1) is not present in table "flight".
+14:55:22.404 [INFO ] - This is an info message
+14:55:22.406 [WARN ] - This is a warning message
+14:55:22.406 [ERROR] - This is an error message
+15:13:15.600 [INFO ] - This is an info message
+15:13:15.602 [WARN ] - This is a warning message
+15:13:15.602 [ERROR] - This is an error message
+15:13:35.367 [INFO ] - This is an info message
+15:13:35.370 [WARN ] - This is a warning message
+15:13:35.370 [ERROR] - This is an error message
+15:13:55.151 [INFO ] - This is an info message
+15:13:55.153 [WARN ] - This is a warning message
+15:13:55.153 [ERROR] - This is an error message
+15:14:21.159 [INFO ] - This is an info message
+15:14:21.162 [WARN ] - This is a warning message
+15:14:21.162 [ERROR] - This is an error message
+15:15:30.033 [INFO ] - This is an info message
+15:15:30.035 [WARN ] - This is a warning message
+15:15:30.035 [ERROR] - This is an error message
+15:16:52.513 [INFO ] - This is an info message
+15:16:52.516 [WARN ] - This is a warning message
+15:16:52.516 [ERROR] - This is an error message
+15:17:40.168 [INFO ] - This is an info message
+15:17:40.170 [WARN ] - This is a warning message
+15:17:40.170 [ERROR] - This is an error message
+15:31:43.121 [INFO ] - This is an info message
+15:31:43.123 [WARN ] - This is a warning message
+15:31:43.123 [ERROR] - This is an error message
+15:31:58.635 [INFO ] - This is an info message
+15:31:58.637 [WARN ] - This is a warning message
+15:31:58.637 [ERROR] - This is an error message
+15:34:49.234 [INFO ] - This is an info message
+15:34:49.236 [WARN ] - This is a warning message
+15:34:49.237 [ERROR] - This is an error message
+15:35:01.011 [INFO ] - This is an info message
+15:35:01.013 [WARN ] - This is a warning message
+15:35:01.013 [ERROR] - This is an error message
+15:40:36.660 [INFO ] - This is an info message
+15:40:36.663 [WARN ] - This is a warning message
+15:40:36.663 [ERROR] - This is an error message
+15:41:34.433 [INFO ] - This is an info message
+15:41:34.435 [WARN ] - This is a warning message
+15:41:34.435 [ERROR] - This is an error message
+15:41:45.896 [INFO ] - This is an info message
+15:41:45.898 [WARN ] - This is a warning message
+15:41:45.898 [ERROR] - This is an error message
+15:46:21.022 [INFO ] - This is an info message
+15:46:21.024 [WARN ] - This is a warning message
+15:46:21.024 [ERROR] - This is an error message
+15:47:52.963 [INFO ] - This is an info message
+15:47:52.965 [WARN ] - This is a warning message
+15:47:52.965 [ERROR] - This is an error message
+15:52:47.642 [INFO ] - This is an info message
+15:52:47.644 [WARN ] - This is a warning message
+15:52:47.644 [ERROR] - This is an error message
+16:05:31.024 [INFO ] - This is an info message
+16:05:31.026 [WARN ] - This is a warning message
+16:05:31.027 [ERROR] - This is an error message
+16:05:44.545 [INFO ] - This is an info message
+16:05:44.547 [WARN ] - This is a warning message
+16:05:44.547 [ERROR] - This is an error message
+16:05:57.644 [INFO ] - This is an info message
+16:05:57.646 [WARN ] - This is a warning message
+16:05:57.646 [ERROR] - This is an error message
+16:10:08.479 [INFO ] - This is an info message
+16:10:08.481 [WARN ] - This is a warning message
+16:10:08.481 [ERROR] - This is an error message
+16:13:00.068 [INFO ] - This is an info message
+16:13:00.072 [WARN ] - This is a warning message
+16:13:00.072 [ERROR] - This is an error message
+16:13:00.397 [ERROR] - ERROR: invalid reference to FROM-clause entry for table "passenger"
+  Hint: Perhaps you meant to reference the table alias "p".
+  Position: 40
+16:13:11.741 [INFO ] - This is an info message
+16:13:11.744 [WARN ] - This is a warning message
+16:13:11.744 [ERROR] - This is an error message
+16:13:12.033 [ERROR] - ERROR: function string_agg(character varying) does not exist
+  Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+  Position: 29
+16:14:27.929 [INFO ] - This is an info message
+16:14:27.932 [WARN ] - This is a warning message
+16:14:27.932 [ERROR] - This is an error message
+16:14:28.251 [ERROR] - ERROR: syntax error at or near "by"
+  Position: 168
+16:15:48.255 [INFO ] - This is an info message
+16:15:48.257 [WARN ] - This is a warning message
+16:15:48.257 [ERROR] - This is an error message
+16:15:48.549 [ERROR] - ERROR: syntax error at or near "by"
+  Position: 168
+16:17:17.447 [INFO ] - This is an info message
+16:17:17.449 [WARN ] - This is a warning message
+16:17:17.449 [ERROR] - This is an error message
+16:17:17.711 [ERROR] - ERROR: syntax error at or near "by"
+  Position: 168
+16:19:05.597 [INFO ] - This is an info message
+16:19:05.600 [WARN ] - This is a warning message
+16:19:05.600 [ERROR] - This is an error message
+16:19:05.946 [ERROR] - ERROR: relation "bookings_passengers" does not exist
+  Position: 112
+16:28:13.429 [INFO ] - This is an info message
+16:28:13.438 [WARN ] - This is a warning message
+16:28:13.439 [ERROR] - This is an error message
+16:28:14.514 [ERROR] - ERROR: syntax error at or near "by"
+  Position: 190
+16:29:09.192 [INFO ] - This is an info message
+16:29:09.197 [WARN ] - This is a warning message
+16:29:09.198 [ERROR] - This is an error message
+16:29:10.049 [ERROR] - ERROR: syntax error at or near "by"
+  Position: 204
+16:30:10.295 [INFO ] - This is an info message
+16:30:10.302 [WARN ] - This is a warning message
+16:30:10.302 [ERROR] - This is an error message
+16:31:35.287 [INFO ] - This is an info message
+16:31:35.293 [WARN ] - This is a warning message
+16:31:35.293 [ERROR] - This is an error message
+16:32:10.282 [INFO ] - This is an info message
+16:32:10.290 [WARN ] - This is a warning message
+16:32:10.290 [ERROR] - This is an error message
+16:32:11.088 [ERROR] - ERROR: syntax error at or near "by"
+  Position: 204
+16:32:50.331 [INFO ] - This is an info message
+16:32:50.338 [WARN ] - This is a warning message
+16:32:50.339 [ERROR] - This is an error message
+16:32:51.236 [ERROR] - ERROR: invalid reference to FROM-clause entry for table "passenger"
+  Hint: Perhaps you meant to reference the table alias "p".
+  Position: 48
+16:33:26.376 [INFO ] - This is an info message
+16:33:26.381 [WARN ] - This is a warning message
+16:33:26.382 [ERROR] - This is an error message
+16:33:27.135 [ERROR] - ERROR: invalid reference to FROM-clause entry for table "passenger"
+  Hint: Perhaps you meant to reference the table alias "p".
+  Position: 48
+16:36:14.390 [INFO ] - This is an info message
+16:36:14.394 [WARN ] - This is a warning message
+16:36:14.394 [ERROR] - This is an error message
+16:44:02.595 [INFO ] - This is an info message
+16:44:02.601 [WARN ] - This is a warning message
+16:44:02.601 [ERROR] - This is an error message
+16:47:00.763 [INFO ] - This is an info message
+16:47:00.770 [WARN ] - This is a warning message
+16:47:00.770 [ERROR] - This is an error message
+16:54:44.590 [INFO ] - This is an info message
+16:54:44.597 [WARN ] - This is a warning message
+16:54:44.597 [ERROR] - This is an error message
+16:54:45.501 [ERROR] - The column name full_name was not found in this ResultSet.
+16:55:29.474 [INFO ] - This is an info message
+16:55:29.482 [WARN ] - This is a warning message
+16:55:29.482 [ERROR] - This is an error message
+17:37:36.520 [INFO ] - This is an info message
+17:37:36.528 [WARN ] - This is a warning message
+17:37:36.529 [ERROR] - This is an error message
+17:37:37.487 [ERROR] - ERROR: syntax error at or near ";"
+  Position: 454
+17:39:32.396 [INFO ] - This is an info message
+17:39:32.408 [WARN ] - This is a warning message
+17:39:32.409 [ERROR] - This is an error message
+17:39:33.394 [ERROR] - ERROR: syntax error at or near ";"
+  Position: 455
+17:40:13.990 [INFO ] - This is an info message
+17:40:13.999 [WARN ] - This is a warning message
+17:40:13.999 [ERROR] - This is an error message
+17:40:28.666 [ERROR] - ERROR: syntax error at or near ";"
+  Position: 455
+17:40:31.440 [INFO ] - This is an info message
+17:40:31.453 [WARN ] - This is a warning message
+17:40:31.453 [ERROR] - This is an error message
+17:42:30.078 [ERROR] - ERROR: syntax error at or near ";"
+  Position: 455
+17:42:40.760 [INFO ] - This is an info message
+17:42:40.765 [WARN ] - This is a warning message
+17:42:40.765 [ERROR] - This is an error message
+18:17:48.449 [INFO ] - This is an info message
+18:17:48.457 [WARN ] - This is a warning message
+18:17:48.457 [ERROR] - This is an error message
+18:18:16.529 [INFO ] - This is an info message
+18:18:16.536 [WARN ] - This is a warning message
+18:18:16.537 [ERROR] - This is an error message
+18:18:20.965 [INFO ] - This is an info message
+18:18:20.972 [WARN ] - This is a warning message
+18:18:20.972 [ERROR] - This is an error message
+18:19:34.320 [INFO ] - This is an info message
+18:19:34.324 [WARN ] - This is a warning message
+18:19:34.325 [ERROR] - This is an error message
+18:20:23.134 [INFO ] - This is an info message
+18:20:23.141 [WARN ] - This is a warning message
+18:20:23.142 [ERROR] - This is an error message
+18:21:20.692 [INFO ] - This is an info message
+18:21:20.702 [WARN ] - This is a warning message
+18:21:20.703 [ERROR] - This is an error message
+18:21:31.442 [INFO ] - This is an info message
+18:21:31.450 [WARN ] - This is a warning message
+18:21:31.450 [ERROR] - This is an error message
+18:21:48.627 [INFO ] - This is an info message
+18:21:48.633 [WARN ] - This is a warning message
+18:21:48.634 [ERROR] - This is an error message
+18:22:19.435 [INFO ] - This is an info message
+18:22:19.441 [WARN ] - This is a warning message
+18:22:19.442 [ERROR] - This is an error message
+18:22:39.196 [INFO ] - This is an info message
+18:22:39.201 [WARN ] - This is a warning message
+18:22:39.202 [ERROR] - This is an error message

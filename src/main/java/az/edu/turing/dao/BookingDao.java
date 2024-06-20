@@ -13,8 +13,7 @@ public interface BookingDao {
 
     void cancelBooking(long bookingId);
 
-    List<BookingEntity> findByFullName(List<String> passengerNames);
+    List<BookingEntity> findByFullName(String passengerNames);
 
-    void update(BookingEntity entity);
 
 }
