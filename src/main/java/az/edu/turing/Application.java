@@ -1,13 +1,17 @@
 package az.edu.turing;
 
+import az.edu.turing.dao.BookingDao;
 import az.edu.turing.dao.FlightDao;
+import az.edu.turing.dao.entity.BookingEntity;
 import az.edu.turing.dao.entity.Cities;
 import az.edu.turing.dao.entity.FlightEntity;
+import az.edu.turing.dao.impl.BookingPostgresDao;
 import az.edu.turing.dao.impl.FlightPostgresDao;
 import az.edu.turing.log.Log;
 import az.edu.turing.service.LoggerService;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Application {
@@ -16,11 +20,26 @@ public class Application {
         LoggerService.logger.warn("This is a warning message");
         LoggerService.logger.error("This is an error message");
 
-        FlightDao flightDao=new FlightPostgresDao();
+       /*  FlightDao flightDao=new FlightPostgresDao();
         flightDao.cancelFlight(3);
         System.out.println(flightDao.findAll());
         System.out.println(flightDao.findByOrigin("MADRID"));
 
+        */
+
+        BookingDao bookingDao=new BookingPostgresDao();
+     //   bookingDao.findById(1);
+
+
+        ArrayList<String> name=new ArrayList<>();
+        name.add("Alex");
+        name.add("Bob");
+        BookingEntity bookingEntity=new BookingEntity(7,name);
+      // bookingDao.save(bookingEntity);
+       // System.out.println(bookingDao.findById(3));
+        System.out.println(bookingDao.findAll());
+       // bookingDao.cancelBooking(7);
+        bookingDao.cancelBooking(2);
 
        /*  flightDao.save(new FlightEntity(Cities.MADRID,Cities.AMSTERDAM, LocalDateTime.now(),100));
 
