@@ -83,8 +83,8 @@ public class FlightServiceImpl implements FlightService {
 
     @Override
     public List<FlightDto> getNext24HoursFlights(Cities origin) {
+        List<FlightEntity> entities=flightDao.findAll();
         try{
-            List<FlightEntity> entities=flightDao.findAll();
             return entities.stream().filter(entity ->
                     entity.getOrigin().equals(origin) &&
                             entity.getDepartureTime().isAfter(LocalDateTime.now()) &&
