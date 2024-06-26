@@ -7,7 +7,6 @@ class BookingPostgresDaoTest {
     void save() {
 
     }
-
     @org.junit.jupiter.api.Test
     void findAll() {
     }
