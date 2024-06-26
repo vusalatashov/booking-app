@@ -2,9 +2,15 @@ package az.edu.turing.dao.impl;
 
 import az.edu.turing.dao.BookingDao;
 import az.edu.turing.dao.entity.BookingEntity;
+import az.edu.turing.database.JdbcConnection;
 import az.edu.turing.service.LoggerService;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -43,10 +49,7 @@ public class BookingPostgresDao implements BookingDao {
 
     @Override
     public void save(BookingEntity entity) {
-        try (Connection conn = DriverManager.getConnection(
-                "jdbc:postgresql://localhost:5433/postgres",
-                "postgres",
-                "postgres");
+        try (Connection conn=JdbcConnection.getConnection();
              PreparedStatement query = conn.prepareStatement(createBooking, Statement.RETURN_GENERATED_KEYS)) {
             query.setLong(1, entity.getFlightId());
             query.executeUpdate();

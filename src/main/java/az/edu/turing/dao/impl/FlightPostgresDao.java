@@ -18,7 +18,6 @@ public class FlightPostgresDao implements FlightDao {
     private static final String cancelFlightSQL="delete from flight where id=?;";
     private static final String findFlightByOrigin="select *from flight where origin=?;";
 
-
     @Override
     public void save(FlightEntity entity) {
         Connection conn = null;
@@ -150,8 +149,6 @@ public class FlightPostgresDao implements FlightDao {
             LoggerService.logger.error(e.getMessage());
         }
         return flightEntities;
-
-
     }
 
 }
