@@ -1,28 +1,26 @@
-version: '3.8'
+version: '3.3'
 services:
-  app:
+  db-postgres:
+    container_name: db_postgres
+    image: postgres
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+  booking-app:
     stdin_open: true
     tty: true
+    container_name: booking_app
+    image: booking-app
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "8080:8080"
     depends_on:
-      - db
-    environment:
-      - DATABASE_URL=jdbc:postgresql://localhost:5433/postgres
-      - DATABASE_USER=postgres
-      - DATABASE_PASSWORD=postgres
-  db:
-      image: postgres:latest
-      environment:
-        - POSTGRES_USER=postgres
-        - POSTGRES_PASSWORD=postgres
-        - POSTGRES_DB=postgres
-      volumes:
-        - postgres_data:/var/lib/postgresql/data/
-      ports:
-        - "5433:5432"
-volumes:
-  postgres_data:
+      - db-postgres
+    network_mode: "host"
+
