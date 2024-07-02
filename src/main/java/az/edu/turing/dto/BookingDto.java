@@ -1,27 +1,24 @@
 package az.edu.turing.dto;
 
 import java.util.List;
-import java.util.Objects;
 
 public class BookingDto {
-    public static long MAX_ID=0;
     private long id;
-    private long flightid;
+    private long flightId;
     private List<String> passengerNames;
 
     public BookingDto() {
-
+        // Default constructor
     }
 
-    public BookingDto(long flightid, List<String> passengerNames) {
-        this.id=++MAX_ID;
-        this.flightid = flightid;
+    public BookingDto(long flightId, List<String> passengerNames) {
+        this.flightId = flightId;
         this.passengerNames = passengerNames;
     }
 
-    public BookingDto(long id, long flightid, List<String> passengerNames) {
+    public BookingDto(long id, long flightId, List<String> passengerNames) {
         this.id = id;
-        this.flightid = flightid;
+        this.flightId = flightId;
         this.passengerNames = passengerNames;
     }
 
@@ -33,12 +30,12 @@ public class BookingDto {
         this.id = id;
     }
 
-    public long getFlightid() {
-        return flightid;
+    public long getFlightId() {
+        return flightId;
     }
 
-    public void setFlightid(long flightid) {
-        this.flightid = flightid;
+    public void setFlightId(long flightId) {
+        this.flightId = flightId;
     }
 
     public List<String> getPassengerNames() {
@@ -48,23 +45,4 @@ public class BookingDto {
     public void setPassengerNames(List<String> passengerNames) {
         this.passengerNames = passengerNames;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        BookingDto that = (BookingDto) o;
-        return id == that.id && flightid == that.flightid && Objects.equals(passengerNames, that.passengerNames);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, flightid, passengerNames);
-    }
-
-    @Override
-    public String toString() {
-        return String.format("\n"+"{id=%d, flightId='%s', passengerNames=%s}", id, flightid, passengerNames);
-    }
-
 }
