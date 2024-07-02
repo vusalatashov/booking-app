@@ -2,77 +2,77 @@ package az.edu.turing.dto;
 
 import az.edu.turing.dao.entity.Cities;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class FlightDto{
-  public static long MAX_ID = 0;
-  private long id;
-  private Cities origin;
-  private Cities destination;
-  private LocalDateTime departureTime;
-  private int numberOfSeats;
+public class FlightDto {
+    private long id;
+    private Cities origin;
+    private Cities destination;
+    private LocalDateTime departureTime;
+    private int numberOfSeats;
 
-  public FlightDto() {
+    // Constructorlar, getterlər və setterlər
+    public FlightDto() {
+    }
 
-  }
+    public FlightDto(long id, Cities origin, Cities destination, LocalDateTime departureTime, int numberOfSeats) {
+        this.id = id;
+        this.origin = origin;
+        this.destination = destination;
+        this.departureTime = departureTime;
+        this.numberOfSeats = numberOfSeats;
+    }
 
-  public FlightDto(Cities origin, Cities destination, LocalDateTime departureTime, int numberOfSeats) {
-      this.id=++MAX_ID;
-      this.origin = origin;
-      this.destination = destination;
-      this.departureTime = departureTime;
-      this.numberOfSeats = numberOfSeats;
-  }
+    // Getter və setterlər
+    public long getId() {
+        return id;
+    }
 
-  public FlightDto(long id,Cities origin, Cities destination, LocalDateTime departureTime, int numberOfSeats) {
-      this.id = id;
-      this.origin = origin;
-      this.destination = destination;
-      this.departureTime = departureTime;
-      this.numberOfSeats = numberOfSeats;
-  }
+    public void setId(long id) {
+        this.id = id;
+    }
 
-  public long getId() {
-      return id;
-  }
+    public Cities getOrigin() {
+        return origin;
+    }
 
-  public void setId(long id){
-      this.id=id;
-  }
+    public void setOrigin(Cities origin) {
+        this.origin = origin;
+    }
 
-  public Cities getOrigin() {
-      return origin;
-  }
+    public void setOrigin(String origin) {
+        this.origin = Cities.valueOf(origin.toUpperCase());
+    }
 
-  public void setOrigin(Cities origin) {
-      this.origin = origin;
-  }
+    public Cities getDestination() {
+        return destination;
+    }
 
-  public Cities getDestination() {
-      return destination;
-  }
+    public void setDestination(Cities destination) {
+        this.destination = destination;
+    }
 
-  public void setDestination(Cities destination) {
-      this.destination = destination;
-  }
+    public void setDestination(String destination) {
+        this.destination = Cities.valueOf(destination.toUpperCase());
+    }
 
-  public LocalDateTime getDepartureTime() {
-      return departureTime;
-  }
+    public LocalDateTime getDepartureTime() {
+        return departureTime;
+    }
 
-  public void setDepartureTime(LocalDateTime departureTime) {
-      this.departureTime = departureTime;
-  }
+    public void setDepartureTime(LocalDateTime departureTime) {
+        this.departureTime = departureTime;
+    }
 
-  public int getNumberOfSeats() {
-      return numberOfSeats;
-  }
+    public int getNumberOfSeats() {
+        return numberOfSeats;
+    }
 
-  public void setNumberOfSeats(int numberOfSeats) {
-      this.numberOfSeats = numberOfSeats;
-  }
+    public void setNumberOfSeats(int numberOfSeats) {
+        this.numberOfSeats = numberOfSeats;
+    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -89,7 +89,7 @@ public class FlightDto{
 
     @Override
     public String toString() {
-        return String.format("\n"+"{id=%d, origin='%s', destination='%s', departureTime=%s, numberOfSeats=%d}\n", id, origin, destination, departureTime, numberOfSeats);
+        return String.format("\n" + "{id=%d, origin='%s', destination='%s', departureTime=%s, numberOfSeats=%d}\n", id, origin, destination, departureTime, numberOfSeats);
     }
 
 

@@ -1,9 +1,8 @@
 package az.edu.turing.service;
 
-import az.edu.turing.dao.entity.Cities;
-import az.edu.turing.dao.entity.FlightEntity;
 import az.edu.turing.dto.CriteriaDto;
 import az.edu.turing.dto.FlightDto;
+import az.edu.turing.dao.entity.Cities;
 
 import java.util.List;
 
@@ -18,8 +17,7 @@ public interface FlightService {
 
     List<FlightDto> getAllFlights();
 
-    FlightDto getFlightById(long flightId);
+    FlightDto getFlightById(long id);
 
     List<FlightDto> getNext24HoursFlights(Cities origin);
-
 }

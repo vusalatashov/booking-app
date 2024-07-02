@@ -17,36 +17,32 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public void saveBooking(BookingDto bookingDto) {
-        BookingEntity bookingEntity=new BookingEntity(bookingDto.getFlightid(),bookingDto.getPassengerNames());
+        BookingEntity bookingEntity = new BookingEntity(bookingDto.getFlightId(), bookingDto.getPassengerNames());
         bookingDao.save(bookingEntity);
+        bookingDto.setId(bookingEntity.getId()); // Ensure ID is set in BookingDto
     }
 
     @Override
     public void cancelBooking(long bookingId) {
         bookingDao.cancelBooking(bookingId);
-
     }
 
     @Override
     public List<BookingDto> getALLBookings() {
         return bookingDao.findAll().stream()
-                .map(booking ->new BookingDto(booking.getId(),
-                        booking.getFlightId(),booking.getPassengerNames()))
+                .map(booking -> new BookingDto(booking.getId(), booking.getFlightId(), booking.getPassengerNames()))
                 .collect(Collectors.toList());
     }
 
     @Override
     public BookingEntity findById(long bookingId) {
-        return  bookingDao.findById(bookingId);
+        return bookingDao.findById(bookingId);
     }
 
     @Override
-    public List<BookingDto> getAllBookingsByPassenger(String passengerNames) {
-        return bookingDao.findByFullName(passengerNames).stream()
-                .map(booking ->new BookingDto(booking.getId(),booking.getFlightId(),
-                        booking.getPassengerNames()))
+    public List<BookingDto> getAllBookingsByPassenger(String passengerName) {
+        return bookingDao.findByFullName(passengerName).stream()
+                .map(booking -> new BookingDto(booking.getId(), booking.getFlightId(), booking.getPassengerNames()))
                 .collect(Collectors.toList());
     }
-
-
 }

@@ -12,18 +12,12 @@ public enum Cities {
     VICTORIA, PORT_LOUIS, SAINT_DENIS, SAINT_PIERRE, SAINT_BARTHELEMY, SAINT_MARTIN, SAINT_LUCIA, SAINT_VINCENT, SAINT_KITTS,
     SAINT_JOHN, SAINT_THOMAS, SAINT_CROIX, SAINT_MAARTEN, SAINT_EUSTATIUS, SAINT_BARTELEMY, SAINT, SAINT_HELENA, SAINT_PETER;
 
-    public static Cities getCity(String name) {
+    public static Cities fromString(String name) {
         try {
-            for (Cities city : values()) {
-                if (city.name().equalsIgnoreCase(name.toUpperCase())) {
-                    return city;
-                }
-            }
+            return Cities.valueOf(name.trim().replace(" ", "_").toUpperCase());
         } catch (IllegalArgumentException e) {
             System.err.println("Invalid city name: " + name);
+            return null;
         }
-        return null;
     }
-
-
 }
